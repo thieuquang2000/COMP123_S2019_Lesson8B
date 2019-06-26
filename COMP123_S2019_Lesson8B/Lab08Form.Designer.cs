@@ -32,9 +32,10 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.NameTexBox = new System.Windows.Forms.TextBox();
             this.InfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.OutputLabel = new System.Windows.Forms.Label();
+            this.SubmitButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.AgeLabel = new System.Windows.Forms.Label();
-            this.SubmitButton = new System.Windows.Forms.Button();
             this.InfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,9 +66,11 @@
             this.NameTexBox.Name = "NameTexBox";
             this.NameTexBox.Size = new System.Drawing.Size(397, 38);
             this.NameTexBox.TabIndex = 1;
+            this.NameTexBox.TextChanged += new System.EventHandler(this.NameTexBox_TextChanged);
             // 
             // InfoGroupBox
             // 
+            this.InfoGroupBox.Controls.Add(this.OutputLabel);
             this.InfoGroupBox.Controls.Add(this.SubmitButton);
             this.InfoGroupBox.Controls.Add(this.textBox1);
             this.InfoGroupBox.Controls.Add(this.AgeLabel);
@@ -81,23 +84,14 @@
             this.InfoGroupBox.TabStop = false;
             this.InfoGroupBox.Text = "Info";
             // 
-            // textBox1
+            // OutputLabel
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(189, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(397, 38);
-            this.textBox1.TabIndex = 3;
-            // 
-            // AgeLabel
-            // 
-            this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgeLabel.Location = new System.Drawing.Point(31, 84);
-            this.AgeLabel.Name = "AgeLabel";
-            this.AgeLabel.Size = new System.Drawing.Size(152, 31);
-            this.AgeLabel.TabIndex = 2;
-            this.AgeLabel.Text = "Enter Age:";
+            this.OutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputLabel.Location = new System.Drawing.Point(2, 157);
+            this.OutputLabel.Name = "OutputLabel";
+            this.OutputLabel.Size = new System.Drawing.Size(452, 31);
+            this.OutputLabel.TabIndex = 5;
+            this.OutputLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // SubmitButton
             // 
@@ -109,6 +103,26 @@
             this.SubmitButton.TabIndex = 4;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = false;
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(189, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(397, 38);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // AgeLabel
+            // 
+            this.AgeLabel.AutoSize = true;
+            this.AgeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgeLabel.Location = new System.Drawing.Point(31, 84);
+            this.AgeLabel.Name = "AgeLabel";
+            this.AgeLabel.Size = new System.Drawing.Size(152, 31);
+            this.AgeLabel.TabIndex = 2;
+            this.AgeLabel.Text = "Enter Age:";
             // 
             // Lab08Form
             // 
@@ -118,6 +132,7 @@
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.InfoGroupBox);
             this.Controls.Add(this.TitleLabel);
+            this.MaximizeBox = false;
             this.Name = "Lab08Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lab08";
@@ -137,6 +152,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label AgeLabel;
         private System.Windows.Forms.Button SubmitButton;
+        private System.Windows.Forms.Label OutputLabel;
     }
 }
 
